@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Personal academic homepage for Zixuan Ke, incoming Computer Science Co-op student at the University of Toronto."
+  />
+  <title>Zixuan Ke</title>
+  <style>
+    :root {
+      --background: #f5f4f0;
+      --surface: #fffefa;
+      --surface-soft: #faf9f5;
+      --text: #20201d;
+      --muted: #62605a;
+      --subtle: #8a867d;
+      --border: #dedbd2;
+      --border-soft: #ebe8df;
+      --link: #343b43;
+      --link-hover: #111315;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--link);
+      text-underline-offset: 0.18em;
+      transition: color 140ms ease;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--link-hover);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(245, 244, 240, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      width: min(960px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .nav-name {
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links li {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links li + li::before {
+      content: "\00b7";
+      margin: 0 10px;
+      color: var(--subtle);
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.94rem;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(960px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 70px 0 56px;
+    }
+
+    .hero {
+      padding: 56px 0 74px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--subtle);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin-bottom: 12px;
+      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    .hero-title {
+      margin-bottom: 8px;
+      color: #2e2e2a;
+      font-size: clamp(1.08rem, 2.4vw, 1.35rem);
+      line-height: 1.45;
+    }
+
+    .hero-meta {
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .hero-subtitle {
+      max-width: 650px;
+      margin-bottom: 0;
+      color: #4f4d48;
+      font-size: 1.04rem;
+    }
+
+    section {
+      scroll-margin-top: 92px;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    section:last-of-type {
+      border-bottom: 0;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(120px, 190px) minmax(0, 1fr);
+      gap: 36px;
+      align-items: start;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: 1.02rem;
+      font-weight: 700;
+    }
+
+    .section-body {
+      max-width: 700px;
+    }
+
+    .section-body p {
+      margin-bottom: 0;
+      color: #3f3d38;
+      font-size: 1.02rem;
+    }
+
+    .education-block {
+      padding: 22px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .education-block h3 {
+      margin-bottom: 6px;
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    .education-block p {
+      margin-bottom: 4px;
+      color: var(--muted);
+    }
+
+    .project-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .project-card {
+      padding: 22px 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .project-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.18rem;
+      font-weight: 500;
+    }
+
+    .project-card p {
+      margin-bottom: 14px;
+      color: #46443f;
+    }
+
+    .project-card a,
+    .contact-list a {
+      font-weight: 650;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skills-list li {
+      padding: 7px 10px;
+      color: #3e3c37;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.96rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: #3f3d38;
+    }
+
+    .contact-label {
+      display: inline-block;
+      min-width: 64px;
+      color: var(--muted);
+    }
+
+    .site-footer {
+      width: min(960px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 0 0 36px;
+      color: var(--subtle);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        position: static;
+      }
+
+      .nav {
+        width: min(100% - 28px, 960px);
+        min-height: auto;
+        padding: 18px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        gap: 8px 14px;
+      }
+
+      .page,
+      .site-footer {
+        width: min(100% - 28px, 960px);
+      }
+
+      .page {
+        padding-top: 34px;
+      }
+
+      .hero {
+        padding: 34px 0 48px;
+      }
+
+      section {
+        scroll-margin-top: 24px;
+        padding: 38px 0;
+      }
+
+      .section-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      h2 {
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .project-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="nav-name" href="#home">Zixuan Ke</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero" id="home" aria-labelledby="home-title">
+      <p class="eyebrow">Personal Homepage</p>
+      <h1 id="home-title">Zixuan Ke</h1>
+      <p class="hero-title">Incoming Computer Science Co-op Student</p>
+      <p class="hero-meta">University of Toronto &middot; Fall 2026</p>
+      <p class="hero-subtitle">
+        A personal website for my academic journey, projects, and long-term growth in computer science.
+      </p>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="section-grid">
+        <h2 id="about-title">About</h2>
+        <div class="section-body">
+          <p>
+            I am an incoming Computer Science Co-op student at the University of Toronto, interested in computer science,
+            programming practice, problem solving, and continuous learning. This site is a simple place to collect my
+            projects, academic progress, and future work as I continue to grow.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" aria-labelledby="education-title">
+      <div class="section-grid">
+        <h2 id="education-title">Education</h2>
+        <div class="section-body">
+          <div class="education-block">
+            <h3>University of Toronto</h3>
+            <p>Computer Science Co-op</p>
+            <p>Fall 2026</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="section-grid">
+        <h2 id="projects-title">Projects</h2>
+        <div class="section-body project-list">
+          <article class="project-card">
+            <h3>Go Game</h3>
+            <p>A simple implementation of the board game Go, built as a programming practice project.</p>
+            <a href="https://github.com/KennyKe0706/GO-Game" target="_blank" rel="noreferrer">GitHub</a>
+          </article>
+
+          <article class="project-card">
+            <h3>Chemistry Equation Balancer</h3>
+            <p>A tool that balances chemical equations through a structured algorithmic approach.</p>
+            <a href="https://github.com/KennyKe0706/Chemistry-Equation-Balancer" target="_blank" rel="noreferrer">GitHub</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="section-grid">
+        <h2 id="skills-title">Skills</h2>
+        <div class="section-body">
+          <ul class="skills-list" aria-label="Skills">
+            <li>Python</li>
+            <li>C++</li>
+            <li>Java</li>
+            <li>HTML/CSS</li>
+            <li>Git</li>
+            <li>Problem Solving</li>
+            <li>Competitive Programming</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="section-grid">
+        <h2 id="contact-title">Contact</h2>
+        <div class="section-body">
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Email:</span>
+              <a href="mailto:kezixuan1@gmail.com">kezixuan1@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-label">GitHub:</span>
+              <a href="https://github.com/KennyKe0706" target="_blank" rel="noreferrer">https://github.com/KennyKe0706</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Zixuan Ke</p>
+  </footer>
+</body>
+</html>
