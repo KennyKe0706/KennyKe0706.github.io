@@ -12,133 +12,52 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="site-header" id="home">
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a class="nav-name" href="#home">Zixuan Ke</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#profiles">Profiles</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="intro">
-      <p class="intro-kicker">Personal Academic Homepage</p>
+  <main class="page">
+    <header class="profile-header">
       <h1>Zixuan (Kenny) Ke</h1>
-      <p class="intro-line">Computer Science Co-op, University of Toronto</p>
-      <p class="intro-summary">
-        I am interested in computer science, programming practice, problem solving,
-        and long-term academic growth.
-      </p>
-      <ul class="intro-links" aria-label="Primary links">
-        <li><a href="mailto:kezixuan1@gmail.com">Email</a></li>
+      <p>Computer Science Co-op, University of Toronto</p>
+      <ul class="links" aria-label="Links">
+        <li><a href="mailto:kezixuan1@gmail.com">kezixuan1@gmail.com</a></li>
         <li><a href="https://github.com/KennyKe0706" target="_blank" rel="noreferrer">GitHub</a></li>
         <li><a href="https://dmoj.ca/user/Kenny" target="_blank" rel="noreferrer">DMOJ</a></li>
         <li><a href="https://leetcode.com/u/kennyke/" target="_blank" rel="noreferrer">LeetCode</a></li>
       </ul>
-    </div>
-  </header>
+    </header>
 
-  <main class="page">
-    <section id="about" aria-labelledby="about-title">
+    <section aria-labelledby="about-title">
       <h2 id="about-title">About</h2>
-      <div class="section-content">
-        <p>
-          I go by Kenny. This site collects my education, projects, coding profiles,
-          and selected work as I continue studying and building in computer science.
-        </p>
-      </div>
+      <p>
+        I go by Kenny. My interests include programming practice, problem solving,
+        algorithms, and steady academic growth in computer science.
+      </p>
     </section>
 
-    <section id="education" aria-labelledby="education-title">
+    <section aria-labelledby="education-title">
       <h2 id="education-title">Education</h2>
-      <div class="section-content">
-        <article class="entry">
-          <div>
-            <h3>University of Toronto</h3>
-            <p>Computer Science Co-op</p>
-          </div>
-        </article>
-      </div>
+      <p><strong>University of Toronto</strong>, Computer Science Co-op</p>
     </section>
 
-    <section id="projects" aria-labelledby="projects-title">
+    <section aria-labelledby="projects-title">
       <h2 id="projects-title">Projects</h2>
-      <div class="section-content entry-list">
-        <article class="entry">
-          <div>
-            <h3>Go Game</h3>
-            <p>A simple implementation of the board game Go, built as a programming practice project.</p>
-          </div>
-          <a href="https://github.com/KennyKe0706/GO-Game" target="_blank" rel="noreferrer">GitHub</a>
-        </article>
-
-        <article class="entry">
-          <div>
-            <h3>Chemistry Equation Balancer</h3>
-            <p>A tool that balances chemical equations through a structured algorithmic approach.</p>
-          </div>
-          <a href="https://github.com/KennyKe0706/Chemistry-Equation-Balancer" target="_blank" rel="noreferrer">GitHub</a>
-        </article>
-      </div>
+      <ul class="plain-list">
+        <li>
+          <a href="https://github.com/KennyKe0706/GO-Game" target="_blank" rel="noreferrer">Go Game</a>
+          <span>Board game implementation for programming practice.</span>
+        </li>
+        <li>
+          <a href="https://github.com/KennyKe0706/Chemistry-Equation-Balancer" target="_blank" rel="noreferrer">Chemistry Equation Balancer</a>
+          <span>Algorithmic tool for balancing chemical equations.</span>
+        </li>
+      </ul>
     </section>
 
-    <section id="skills" aria-labelledby="skills-title">
+    <section aria-labelledby="skills-title">
       <h2 id="skills-title">Skills</h2>
-      <div class="section-content">
-        <ul class="inline-list" aria-label="Skills">
-          <li>Python</li>
-          <li>C++</li>
-          <li>HTML/CSS</li>
-          <li>Git</li>
-          <li>Problem Solving</li>
-          <li>Competitive Programming</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="profiles" aria-labelledby="profiles-title">
-      <h2 id="profiles-title">Profiles</h2>
-      <div class="section-content entry-list">
-        <article class="entry">
-          <div>
-            <h3>DMOJ</h3>
-            <p>Algorithm practice, contests, and problem solving progress.</p>
-          </div>
-          <a href="https://dmoj.ca/user/Kenny" target="_blank" rel="noreferrer">View</a>
-        </article>
-
-        <article class="entry">
-          <div>
-            <h3>LeetCode</h3>
-            <p>Data structures, algorithms, and interview-style practice.</p>
-          </div>
-          <a href="https://leetcode.com/u/kennyke/" target="_blank" rel="noreferrer">View</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <div class="section-content">
-        <dl class="contact-list">
-          <div>
-            <dt>Email</dt>
-            <dd><a href="mailto:kezixuan1@gmail.com">kezixuan1@gmail.com</a></dd>
-          </div>
-          <div>
-            <dt>GitHub</dt>
-            <dd><a href="https://github.com/KennyKe0706" target="_blank" rel="noreferrer">github.com/KennyKe0706</a></dd>
-          </div>
-        </dl>
-      </div>
+      <p>Python, C++, HTML/CSS, Git, problem solving, competitive programming.</p>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <p>&copy; <span id="year">2026</span> Zixuan (Kenny) Ke</p>
   </footer>
 </body>
