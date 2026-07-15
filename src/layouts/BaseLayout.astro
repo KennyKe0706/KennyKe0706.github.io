@@ -1,0 +1,88 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  type?: "website" | "article";
+  structuredData?: Record<string, unknown>;
+}
+
+const {
+  title,
+  description,
+  image = "/og/default.png",
+  type = "website",
+  structuredData,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(image, Astro.site);
+
+const personSchema = {
+  "@type": "Person",
+  name: "Zixuan Ke",
+  alternateName: "Kenny Ke",
+  url: new URL("/", Astro.site).href,
+  affiliation: {
+    "@type": "CollegeOrUniversity",
+    name: "University of Toronto",
+  },
+  sameAs: [
+    "https://github.com/KennyKe0706",
+    "https://www.linkedin.com/in/zixuan-ke-50094a328/",
+    "https://dmoj.ca/user/Kenny",
+    "https://leetcode.com/u/kennyke/",
+  ],
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": structuredData ? [personSchema, structuredData] : [personSchema],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#090b10" />
+
+    <title>{title}</title>
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Zixuan (Kenny) Ke — Computer Science portfolio"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(schema)}
+      is:inline
+    />
+    <script is:inline>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <span id="top" class="page-top-anchor" aria-hidden="true"></span>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <slot />
+    <script>
+      import "../scripts/site";
+    </script>
+  </body>
+</html>

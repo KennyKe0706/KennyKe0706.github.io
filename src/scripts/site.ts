@@ -1,13 +1,10 @@
-const year = document.querySelector("#year");
-const header = document.querySelector("[data-header]");
-const revealItems = document.querySelectorAll("[data-reveal]");
+const header = document.querySelector<HTMLElement>("[data-header]");
+const revealItems = document.querySelectorAll<HTMLElement>("[data-reveal]");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-if (year) {
-  year.textContent = String(new Date().getFullYear());
-}
+export {};
 
-const updateHeader = () => {
+const updateHeader = (): void => {
   header?.classList.toggle("is-scrolled", window.scrollY > 18);
 };
 

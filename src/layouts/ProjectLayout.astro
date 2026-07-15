@@ -1,0 +1,103 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import BaseLayout from "./BaseLayout.astro";
+import "../styles/content.css";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+const kindLabel = project.data.kind === "prototype" ? "Prototype" : "Tool";
+const pageUrl = new URL(`/projects/${project.id}/`, Astro.site).href;
+
+const projectSchema = {
+  "@type": "SoftwareSourceCode",
+  name: project.data.title,
+  description: project.data.summary,
+  url: pageUrl,
+  codeRepository: project.data.repository,
+  image: new URL(project.data.cover, Astro.site).href,
+  programmingLanguage: project.data.technologies,
+  author: {
+    "@type": "Person",
+    name: "Zixuan Ke",
+  },
+};
+---
+
+<BaseLayout
+  title={`${project.data.title} — Kenny Ke`}
+  description={project.data.summary}
+  image={project.data.cover}
+  type="article"
+  structuredData={projectSchema}
+>
+  <Header />
+  <main id="main-content" class="project-detail">
+    <article>
+      <header class="project-detail-header section-shell">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a><span aria-hidden="true">/</span><a
+            href="/projects/">Projects</a
+          >
+        </nav>
+        <div class="detail-title-grid">
+          <p class="section-number">{kindLabel} / {project.data.year}</p>
+          <div>
+            <h1>{project.data.title}</h1>
+            <p class="detail-summary">{project.data.summary}</p>
+          </div>
+        </div>
+        <dl class="detail-meta">
+          <div>
+            <dt>Technologies</dt>
+            <dd>{project.data.technologies.join(" · ")}</dd>
+          </div>
+          <div>
+            <dt>Concepts</dt>
+            <dd>{project.data.concepts.join(" · ")}</dd>
+          </div>
+          <div>
+            <dt>Source</dt>
+            <dd>
+              <a href={project.data.repository} target="_blank" rel="noreferrer"
+                >GitHub repository ↗</a
+              >
+            </dd>
+          </div>
+        </dl>
+      </header>
+
+      <figure class="detail-cover section-shell">
+        <img
+          src={project.data.cover}
+          alt={project.data.coverAlt}
+          width="1600"
+          height="1000"
+          decoding="async"
+        />
+        <figcaption>
+          Interface captured from the public project repository.
+        </figcaption>
+      </figure>
+
+      <div class="project-prose section-shell">
+        <slot />
+      </div>
+
+      <nav
+        class="project-bottom-nav section-shell"
+        aria-label="Project navigation"
+      >
+        <a href="/projects/">← All projects</a>
+        <a href={project.data.repository} target="_blank" rel="noreferrer"
+          >View source code ↗</a
+        >
+      </nav>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
