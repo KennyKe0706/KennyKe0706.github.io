@@ -34,21 +34,3 @@ if (reduceMotion.matches || !("IntersectionObserver" in window)) {
     revealObserver.observe(item);
   });
 }
-
-if (!reduceMotion.matches && window.matchMedia("(pointer: fine)").matches) {
-  let frame;
-
-  window.addEventListener(
-    "pointermove",
-    (event) => {
-      if (frame) return;
-
-      frame = requestAnimationFrame(() => {
-        document.documentElement.style.setProperty("--pointer-x", `${event.clientX}px`);
-        document.documentElement.style.setProperty("--pointer-y", `${event.clientY}px`);
-        frame = null;
-      });
-    },
-    { passive: true },
-  );
-}
