@@ -1,154 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Personal academic homepage for Zixuan (Kenny) Ke, a Computer Science student at the University of Toronto St. George."
-  />
-  <title>Zixuan (Kenny) Ke</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <main class="site-shell">
-    <header class="profile-header" aria-labelledby="profile-title">
-      <div class="identity">
-        <p class="kicker">Personal Academic Homepage</p>
-        <h1 id="profile-title">Zixuan (Kenny) Ke</h1>
-        <p class="subtitle">
-          Computer Science student at the University of Toronto St. George,
-          developing a disciplined foundation in algorithms, programming
-          systems, and computational problem solving.
-        </p>
-      </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Zixuan (Kenny) Ke is a Computer Science student at the University of Toronto, focused on algorithms, software systems, and thoughtful problem solving."
+    >
+    <meta name="theme-color" content="#090b10">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zixuan (Kenny) Ke — Computer Science">
+    <meta
+      property="og:description"
+      content="Selected work, technical interests, and contact information for Zixuan (Kenny) Ke."
+    >
+    <meta property="og:url" content="https://kennyke0706.github.io/">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://kennyke0706.github.io/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <title>Zixuan (Kenny) Ke — Computer Science</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Zixuan Ke",
+        "alternateName": "Kenny Ke",
+        "url": "https://kennyke0706.github.io/",
+        "email": "mailto:kezixuan1@gmail.com",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Toronto"
+        },
+        "sameAs": [
+          "https://github.com/KennyKe0706",
+          "https://dmoj.ca/user/Kenny",
+          "https://leetcode.com/u/kennyke/"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="ambient-glow" aria-hidden="true"></div>
 
-      <address class="contact-panel" aria-label="Contact and profiles">
-        <a href="mailto:kezixuan1@gmail.com">kezixuan1@gmail.com</a>
-        <a href="https://github.com/KennyKe0706" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://dmoj.ca/user/Kenny" target="_blank" rel="noreferrer">DMOJ</a>
-        <a href="https://leetcode.com/u/kennyke/" target="_blank" rel="noreferrer">LeetCode</a>
-      </address>
+    <header class="site-header" data-header>
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="wordmark" href="#top" aria-label="K / K — Kenny Ke, home">
+          <span>K</span><i aria-hidden="true">/</i><span>K</span>
+        </a>
+        <div class="nav-links">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="nav-cta" href="mailto:kezixuan1@gmail.com">
+          <span class="nav-label">Say hello</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
     </header>
 
-    <div class="content-grid">
-      <aside class="profile-aside" aria-label="Academic profile summary">
-        <section class="aside-block" aria-labelledby="affiliation-title">
-          <h2 id="affiliation-title">Affiliation</h2>
+    <main id="main-content">
+      <section class="hero section-shell" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow"><span></span> Computer Science · Toronto</p>
+          <h1 id="hero-title">
+            Building clear systems for
+            <em>complex problems.</em>
+          </h1>
+          <p class="hero-intro">
+            I’m Zixuan (Kenny) Ke, a Computer Science student at the University
+            of Toronto exploring algorithms, software systems, and the craft of
+            turning precise ideas into reliable code.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">
+              Explore selected work <span aria-hidden="true">↓</span>
+            </a>
+            <a
+              class="button button-quiet"
+              href="https://github.com/KennyKe0706"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-mark" aria-hidden="true" data-reveal>
+          <div class="mark-orbit orbit-one"></div>
+          <div class="mark-orbit orbit-two"></div>
+          <div class="mark-core">
+            <span class="core-label">Kenny Ke</span>
+            <strong>KK</strong>
+            <span class="core-meta">43.65° N<br>79.38° W</span>
+          </div>
+          <span class="mark-index">PORTFOLIO / 26</span>
+        </div>
+
+        <div class="hero-foot" data-reveal>
+          <p>Curiosity in practice</p>
+          <div class="hero-rule"></div>
+          <a href="#work">Scroll to discover <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section class="work section-shell" id="work" aria-labelledby="work-title">
+        <header class="section-header" data-reveal>
+          <p class="section-number">01 / Selected work</p>
+          <h2 id="work-title">Ideas, made tangible.</h2>
           <p>
-            <strong>University of Toronto St. George</strong>
-            <span>Computer Science</span>
+            Small, focused projects built to sharpen implementation and
+            algorithmic reasoning.
           </p>
-        </section>
+        </header>
 
-        <section class="aside-block" aria-labelledby="interests-title">
-          <h2 id="interests-title">Academic Interests</h2>
-          <ul class="tag-list">
-            <li>Algorithms</li>
-            <li>Programming Practice</li>
-            <li>Problem Solving</li>
-            <li>Computational Thinking</li>
-          </ul>
-        </section>
+        <div class="project-grid">
+          <a
+            class="project-card project-card-go"
+            href="https://github.com/KennyKe0706/GO-Game"
+            target="_blank"
+            rel="noreferrer"
+            data-reveal
+          >
+            <div class="project-visual" aria-hidden="true">
+              <div class="go-board">
+                <i class="stone stone-dark stone-a"></i>
+                <i class="stone stone-light stone-b"></i>
+                <i class="stone stone-dark stone-c"></i>
+                <i class="stone stone-light stone-d"></i>
+                <i class="stone stone-dark stone-e"></i>
+              </div>
+              <span class="visual-caption">Strategy / Interaction</span>
+            </div>
+            <div class="project-info">
+              <p class="project-meta"><span>01</span> JavaScript · Game logic</p>
+              <h3>Go Game</h3>
+              <p>
+                A two-player board game implementation exploring state,
+                interaction, and rule-driven systems.
+              </p>
+              <span class="project-link">View repository <i aria-hidden="true">↗</i></span>
+            </div>
+          </a>
 
-        <section class="aside-block" aria-labelledby="practice-title">
-          <h2 id="practice-title">Practice</h2>
+          <a
+            class="project-card project-card-chem"
+            href="https://github.com/KennyKe0706/Chemistry-Equation-Balancer"
+            target="_blank"
+            rel="noreferrer"
+            data-reveal
+          >
+            <div class="project-visual" aria-hidden="true">
+              <div class="equation">
+                <span>2H<sub>2</sub></span>
+                <i>+</i>
+                <span>O<sub>2</sub></span>
+                <i>→</i>
+                <span>2H<sub>2</sub>O</span>
+              </div>
+              <div class="molecule molecule-a"><i></i><i></i></div>
+              <div class="molecule molecule-b"><i></i><i></i><i></i></div>
+              <span class="visual-caption">Constraint / Balance</span>
+            </div>
+            <div class="project-info">
+              <p class="project-meta"><span>02</span> JavaScript · Algorithms</p>
+              <h3>Chemistry Equation Balancer</h3>
+              <p>
+                An algorithmic tool that balances neutral chemical equations by
+                conserving each element’s mass.
+              </p>
+              <span class="project-link">View repository <i aria-hidden="true">↗</i></span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="about section-shell" id="about" aria-labelledby="about-title">
+        <div class="about-lead" data-reveal>
+          <p class="section-number">02 / About</p>
+          <h2 id="about-title">Precision over noise.</h2>
+        </div>
+        <div class="about-body" data-reveal>
+          <p class="about-statement">
+            I’m interested in the quiet discipline behind good software:
+            understanding the problem, finding the right abstraction, and
+            making every line earn its place.
+          </p>
           <p>
-            Ongoing work in competitive programming, implementation exercises,
-            and small algorithmic tools.
+            My current focus is building a strong foundation in computer
+            science through coursework, competitive programming, and small
+            projects. I value clear thinking, deliberate practice, and steady
+            improvement over shortcuts.
           </p>
-        </section>
-      </aside>
+        </div>
 
-      <div class="main-content">
-        <section class="section-block" aria-labelledby="about-title">
-          <div class="section-heading">
-            <span>01</span>
-            <h2 id="about-title">About</h2>
+        <dl class="profile-grid" data-reveal>
+          <div>
+            <dt>Studying</dt>
+            <dd>Computer Science</dd>
+            <dd>University of Toronto</dd>
           </div>
-          <p class="lead">
-            I go by Kenny. My current academic focus is strengthening the habits
-            that make reliable software possible: precise reasoning, careful
-            implementation, and steady improvement through deliberate practice.
-          </p>
-        </section>
+          <div>
+            <dt>Working with</dt>
+            <dd>Python · C++ · JavaScript</dd>
+            <dd>HTML · CSS · Git</dd>
+          </div>
+          <div>
+            <dt>Exploring</dt>
+            <dd>Algorithms · Systems</dd>
+            <dd>Computational problem solving</dd>
+          </div>
+          <div>
+            <dt>Practising on</dt>
+            <dd>
+              <a href="https://dmoj.ca/user/Kenny" target="_blank" rel="noreferrer">DMOJ ↗</a>
+              ·
+              <a href="https://leetcode.com/u/kennyke/" target="_blank" rel="noreferrer">LeetCode ↗</a>
+            </dd>
+          </div>
+        </dl>
+      </section>
 
-        <section class="section-block" aria-labelledby="education-title">
-          <div class="section-heading">
-            <span>02</span>
-            <h2 id="education-title">Education</h2>
-          </div>
-          <div class="entry">
-            <div>
-              <h3>University of Toronto St. George</h3>
-              <p>Computer Science</p>
-            </div>
-            <p>
-              Academic preparation in computer science at the St. George campus,
-              with emphasis on programming fundamentals, algorithms, and applied
-              problem solving.
-            </p>
-          </div>
-        </section>
+      <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
+        <div class="contact-inner" data-reveal>
+          <p class="section-number">03 / Contact</p>
+          <h2 id="contact-title">Have an interesting problem?</h2>
+          <a class="contact-email" href="mailto:kezixuan1@gmail.com">
+            <span>Let’s talk.</span>
+            <i aria-hidden="true">↗</i>
+          </a>
+        </div>
+      </section>
+    </main>
 
-        <section class="section-block" aria-labelledby="projects-title">
-          <div class="section-heading">
-            <span>03</span>
-            <h2 id="projects-title">Selected Projects</h2>
-          </div>
-          <ol class="project-list">
-            <li>
-              <article class="project-item">
-                <span class="project-index">01</span>
-                <div>
-                  <h3>
-                    <a href="https://github.com/KennyKe0706/GO-Game" target="_blank" rel="noreferrer">Go Game</a>
-                  </h3>
-                  <p>Board game implementation for programming practice.</p>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article class="project-item">
-                <span class="project-index">02</span>
-                <div>
-                  <h3>
-                    <a href="https://github.com/KennyKe0706/Chemistry-Equation-Balancer" target="_blank" rel="noreferrer">Chemistry Equation Balancer</a>
-                  </h3>
-                  <p>Algorithmic tool for balancing chemical equations.</p>
-                </div>
-              </article>
-            </li>
-          </ol>
-        </section>
-
-        <section class="section-block" aria-labelledby="skills-title">
-          <div class="section-heading">
-            <span>04</span>
-            <h2 id="skills-title">Technical Preparation</h2>
-          </div>
-          <dl class="skill-grid">
-            <div>
-              <dt>Languages</dt>
-              <dd>Python, C++, HTML/CSS</dd>
-            </div>
-            <div>
-              <dt>Tools</dt>
-              <dd>Git, command-line workflows</dd>
-            </div>
-            <div>
-              <dt>Practice Areas</dt>
-              <dd>Problem solving, competitive programming</dd>
-            </div>
-          </dl>
-        </section>
-      </div>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <p>&copy; <span id="year">2026</span> Zixuan (Kenny) Ke</p>
-  </footer>
-</body>
+    <footer class="site-footer section-shell">
+      <p>© <span id="year">2026</span> Zixuan (Kenny) Ke</p>
+      <p>Designed with restraint. Built with intent.</p>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
 </html>
