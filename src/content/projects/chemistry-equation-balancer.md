@@ -16,6 +16,7 @@ concepts:
   - "Nullspace solving"
   - "Exact rational arithmetic"
 repository: "https://github.com/KennyKe0706/Chemistry-Equation-Balancer"
+demo: "/demos/chemistry-equation-balancer/"
 cover: "/images/projects/chemistry-balancer.png"
 coverAlt: "Chemistry Equation Balancer interface with an equation input, balance and clear controls, example buttons, and a note describing supported neutral equations"
 year: 2025

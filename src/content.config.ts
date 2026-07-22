@@ -16,6 +16,7 @@ const projects = defineCollection({
     technologies: z.array(z.string()),
     concepts: z.array(z.string()),
     repository: z.url(),
+    demo: z.string().regex(/^\/demos\/[a-z0-9-]+\/$/),
     cover: z.string(),
     coverAlt: z.string(),
     year: z.number().int(),

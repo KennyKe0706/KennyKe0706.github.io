@@ -1,6 +1,6 @@
 # Kenny Ke — Personal Portfolio
 
-Personal academic and project portfolio for Zixuan (Kenny) Ke. The site presents a concise academic profile and source-backed case studies for selected software projects.
+Personal academic and project portfolio for Zixuan (Kenny) Ke. The site presents a concise academic profile, implementation-focused case studies, and live demos for selected software projects.
 
 ## Live site
 
@@ -66,7 +66,7 @@ Project metadata is validated by the schema in `src/content.config.ts`. Adding a
 
 ## Content policy
 
-Project descriptions are based on public source code, repository documentation, and actual project screenshots. The site intentionally avoids placeholder demos, skill percentages, unverified academic details, and invented development stories. The detailed filtering decisions are recorded in [`docs/IMPLEMENTATION_SCOPE.md`](docs/IMPLEMENTATION_SCOPE.md).
+Project descriptions are based on public source code, repository documentation, and actual project screenshots. Live demos are first-party snapshots of the public project implementations hosted within this site. The site intentionally avoids placeholder links, skill percentages, unverified academic details, and invented development stories. The detailed filtering decisions are recorded in [`docs/IMPLEMENTATION_SCOPE.md`](docs/IMPLEMENTATION_SCOPE.md).
 
 ## Deployment
 

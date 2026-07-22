@@ -387,6 +387,25 @@ dd {
   font-size: 0.8rem;
 }
 
+.academic-card dd + dd {
+  grid-column: 2;
+  margin-top: -10px;
+}
+
+.academic-card dd a {
+  transition: color 160ms ease;
+}
+
+.academic-card dd a:hover {
+  color: var(--accent);
+}
+
+.academic-card .practice-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 6px;
+}
+
 .academic-card-footer {
   padding: 18px 22px;
   color: var(--text-faint);
@@ -597,7 +616,7 @@ dd {
 .profile-grid {
   display: grid;
   grid-column: 1 / -1;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 30px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -793,20 +812,6 @@ dd {
   .section-header > p:last-child {
     grid-column: 2;
     justify-self: start;
-  }
-
-  .profile-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .profile-grid > div:nth-child(3) {
-    padding-left: 0;
-    border-top: 1px solid var(--line);
-    border-left: 0;
-  }
-
-  .profile-grid > div:nth-child(4) {
-    border-top: 1px solid var(--line);
   }
 }
 

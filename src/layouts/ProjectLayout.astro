@@ -19,6 +19,11 @@ const projectSchema = {
   description: project.data.summary,
   url: pageUrl,
   codeRepository: project.data.repository,
+  targetProduct: {
+    "@type": "SoftwareApplication",
+    name: project.data.title,
+    url: new URL(project.data.demo, Astro.site).href,
+  },
   image: new URL(project.data.cover, Astro.site).href,
   programmingLanguage: project.data.technologies,
   author: {
@@ -61,8 +66,10 @@ const projectSchema = {
             <dd>{project.data.concepts.join(" · ")}</dd>
           </div>
           <div>
-            <dt>Source</dt>
+            <dt>Explore</dt>
             <dd>
+              <a href={project.data.demo}>Live demo →</a>
+              ·
               <a href={project.data.repository} target="_blank" rel="noreferrer"
                 >GitHub repository ↗</a
               >
@@ -93,9 +100,13 @@ const projectSchema = {
         aria-label="Project navigation"
       >
         <a href="/projects/">← All projects</a>
-        <a href={project.data.repository} target="_blank" rel="noreferrer"
-          >View source code ↗</a
-        >
+        <span>
+          <a href={project.data.demo}>Live demo →</a>
+          ·
+          <a href={project.data.repository} target="_blank" rel="noreferrer"
+            >View source code ↗</a
+          >
+        </span>
       </nav>
     </article>
   </main>

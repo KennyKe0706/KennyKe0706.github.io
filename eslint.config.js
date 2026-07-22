@@ -8,6 +8,7 @@ export default [
       "dist/**",
       "node_modules/**",
       "playwright-report/**",
+      "public/demos/**",
       "test-results/**",
     ],
   },
