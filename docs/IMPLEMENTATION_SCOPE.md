@@ -15,6 +15,7 @@
 - 完整 README 和本地开发说明
 - 只基于公开源码与 README 撰写的项目功能、技术实现和限制
 - 能从公开仓库或项目实际运行取得的真实截图
+- 站内托管、与公开项目源码对应的两个可操作 Live Demo
 - 用户确认的 LinkedIn 公开主页，用于 Contact 与结构化数据
 
 ## 删除或改写的项目
@@ -24,18 +25,18 @@
 | `resume.pdf`、Résumé 导航与测试 | 删除                       | 未提供经过确认的简历文件                                 |
 | LinkedIn                        | 保留                       | 用户已提供并确认公开主页 `zixuan-ke-50094a328`           |
 | 第三个项目                      | 删除                       | 没有指定可核验项目                                       |
-| Live Demo 按钮                  | 暂不显示                   | 两个仓库均未配置公开 Demo 地址；不使用示例链接           |
+| Live Demo 按钮                  | 站内托管并显示             | 两个仓库未配置独立 Pages，本站托管对应的纯浏览器实现     |
 | “Incoming student” 文案         | 不采用                     | 入学时间和正式项目身份未得到确认；沿用现有的中性学术表述 |
 | 项目中的个人挑战、Bug 复盘      | 删除                       | 代码能说明实现，但不能证明作者当时的主观过程             |
 | 未经代码验证的算法标签          | 删除或改成源码可证明的表述 | 避免为了关键词夸大项目深度                               |
-| 简历下载、Demo 的验收项         | 删除                       | 对应素材不存在                                           |
+| 简历下载                        | 删除                       | 未提供经过确认的简历文件                                 |
 | Vitest                          | 删除                       | 当前站点没有值得单元测试的纯业务函数                     |
 | React、筛选器、主题切换、博客   | 延后                       | 两个项目不需要筛选，现阶段加入会增加体积与维护成本       |
 | `legacy/` 旧站副本              | 不保留在最终树中           | Git 历史已经提供完整回退能力，重复副本只会制造维护分叉   |
 
 ## 内容边界
 
-- Academic Profile 只展示现有网站已经确认的 University of Toronto St. George、Computer Science、算法与系统兴趣。
+- Academic Profile 只展示现有网站已经确认的 University of Toronto St. George、Computer Science，以及用户明确提供的 AI、机器学习和统计学术兴趣。
 - LinkedIn 仅作为用户提供的公开联系链接使用，不抓取或转述其中未经确认的经历。
 - 技术列表只保留现有项目和主页已有证据支持的 Python、C++、JavaScript、HTML、CSS 与 Git。
 - Chemistry Equation Balancer 的解析、矩阵、精确分数行化简和限制来自该仓库 README 与源码。

@@ -5,6 +5,8 @@ const routes = [
   "/projects/",
   "/projects/go-game/",
   "/projects/chemistry-equation-balancer/",
+  "/demos/go-game/",
+  "/demos/chemistry-equation-balancer/",
   "/this-page-does-not-exist/",
 ] as const;
 

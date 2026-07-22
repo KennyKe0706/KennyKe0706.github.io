@@ -16,6 +16,7 @@ concepts:
   - "Rule validation"
   - "State snapshots"
 repository: "https://github.com/KennyKe0706/GO-Game"
+demo: "/demos/go-game/"
 cover: "/images/projects/go-game.png"
 coverAlt: "Go Game interface showing a wooden 19 by 19 board, black and white stones, capture counts, and Restart and Undo buttons"
 year: 2025

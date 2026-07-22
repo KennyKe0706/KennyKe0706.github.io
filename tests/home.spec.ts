@@ -25,6 +25,10 @@ test("home page presents the primary academic and project content", async ({
   await expect(
     page.getByRole("heading", { name: "Chemistry Equation Balancer" }).first(),
   ).toBeVisible();
+  await expect(
+    page.getByText("Artificial Intelligence · Machine Learning"),
+  ).toBeVisible();
+  await expect(page.getByText("Linear Algebra · Statistics")).toBeVisible();
 });
 
 test("home page exposes verified contact and practice destinations", async ({

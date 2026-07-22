@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Balance neutral chemical equations with exact rational arithmetic."
+    />
+    <title>Chemistry Equation Balancer — Live Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <a class="portfolio-link" href="/">← Back to portfolio</a>
+      <h1>Chemistry Equation Balancer</h1>
+      <p class="sub">
+        Enter an equation such as <code>Fe + O2 -&gt; Fe2O3</code> to find its
+        smallest whole-number coefficients.
+      </p>
+
+      <div class="note">
+        <strong>Scope:</strong> balances neutral equations by mass. Parentheses
+        and hydrates (<code>·</code> or <code>.</code>) are supported; ions,
+        charges, redox reactions, state labels, and multiple arrows are not.
+      </div>
+
+      <section class="card" aria-labelledby="equation-label">
+        <label id="equation-label" for="eq">Unbalanced equation</label>
+        <input
+          id="eq"
+          type="text"
+          placeholder="e.g. C3H8 + O2 -> CO2 + H2O"
+          autocomplete="off"
+        />
+
+        <div class="bar">
+          <div class="left">
+            <button id="bal" class="primary" type="button">Balance</button>
+            <button id="clr" type="button">Clear</button>
+          </div>
+          <div class="right" aria-label="Example equations">
+            <button id="ex1" type="button">Example 1</button>
+            <button id="ex2" type="button">Example 2</button>
+            <button id="ex3" type="button">Example 3</button>
+          </div>
+        </div>
+
+        <output id="out" class="out" for="eq" aria-live="polite"></output>
+
+        <details>
+          <summary>How it works</summary>
+          <ul>
+            <li>Counts the elements in each formula.</li>
+            <li>Builds an element-conservation matrix.</li>
+            <li>
+              Solves a nullspace vector with exact rational row reduction.
+            </li>
+            <li>
+              Scales the result to the smallest whole-number coefficients.
+            </li>
+          </ul>
+        </details>
+
+        <p class="foot">
+          Remove state labels such as <code>(aq)</code> and do not enter
+          pre-existing coefficients.
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

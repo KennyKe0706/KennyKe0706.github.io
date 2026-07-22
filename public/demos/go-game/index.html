@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Play a local two-player Go prototype with captures, undo, and restart."
+    />
+    <title>Go Game — Live Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <a class="portfolio-link" href="/">← Back to portfolio</a>
+      <header class="intro">
+        <div>
+          <p class="eyebrow">Local two-player prototype</p>
+          <h1>Go Game</h1>
+        </div>
+        <p>
+          Black plays first. Select an empty intersection to place a stone. This
+          prototype detects captures and prevents suicide moves, but does not
+          implement ko, passing, or territory scoring.
+        </p>
+      </header>
+
+      <section id="game" class="game" aria-labelledby="turn-status">
+        <div class="game-status">
+          <p id="turn-status" class="turn" aria-live="polite">Black to move</p>
+          <div class="scores" aria-label="Capture counts">
+            <span id="black-score">Black captures: 0</span>
+            <span id="white-score">White captures: 0</span>
+          </div>
+        </div>
+
+        <svg
+          id="board"
+          viewBox="0 0 800 800"
+          role="img"
+          aria-label="Interactive 19 by 19 Go board"
+        ></svg>
+
+        <div class="controls">
+          <button id="restart" class="primary" type="button">Restart</button>
+          <button id="undo" type="button">Undo</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>

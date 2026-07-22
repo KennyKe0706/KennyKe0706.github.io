@@ -39,8 +39,11 @@ const kindLabel = project.data.kind === "prototype" ? "Prototype" : "Tool";
     </h3>
     <p>{project.data.summary}</p>
     <div class="project-actions">
+      <a class="project-link" href={project.data.demo}
+        >Live Demo <i aria-hidden="true">→</i></a
+      >
       <a class="project-link" href={detailHref}
-        >Case study <i aria-hidden="true">→</i></a
+        >Case Study <i aria-hidden="true">→</i></a
       >
       <a
         class="project-link"
@@ -48,7 +51,7 @@ const kindLabel = project.data.kind === "prototype" ? "Prototype" : "Tool";
         target="_blank"
         rel="noreferrer"
       >
-        Source code <i aria-hidden="true">↗</i>
+        Source Code <i aria-hidden="true">↗</i>
       </a>
     </div>
   </div>
