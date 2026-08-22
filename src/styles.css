@@ -493,18 +493,15 @@ ul {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  transition: color 160ms ease;
 }
 
 .resume-entry span:last-child {
   color: var(--muted);
 }
 
-.resume-entry-active {
-  transition: color 160ms ease;
-}
-
-.resume-entry-active:hover,
-.resume-entry-active:hover span:last-child {
+.resume-entry:hover,
+.resume-entry:hover span:last-child {
   color: var(--ink);
 }
 

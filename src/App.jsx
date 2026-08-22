@@ -42,8 +42,6 @@ const profileLinks = [
   { label: "LeetCode", href: "https://leetcode.com/u/kennyke/" },
 ];
 
-const resumeHref = "/Zixuan_Kenny_Ke_Resume.pdf";
-
 function ExternalArrow() {
   return <span aria-hidden="true">↗</span>;
 }
@@ -200,30 +198,16 @@ function App() {
         <section className="resume-section page-shell" id="resume">
           <p className="section-label">Curriculum vitae</p>
           <div className="resume-grid">
-            <h2>Résumé in preparation.</h2>
+            <h2>Résumé.</h2>
             <div className="resume-copy">
-              <p>
-                I am currently preparing a concise record of my education,
-                experience, and projects. The completed PDF will be available
-                here.
-              </p>
-              {resumeHref ? (
-                <a
-                  className="resume-entry resume-entry-active"
-                  href={resumeHref}
-                >
-                  <span>Résumé · PDF</span>
-                  <span>View document →</span>
-                </a>
-              ) : (
-                <div
-                  className="resume-entry"
-                  aria-label="Résumé PDF, in progress"
-                >
-                  <span>Résumé · PDF</span>
-                  <span>In progress</span>
-                </div>
-              )}
+              <p>My current résumé is available as a PDF.</p>
+              <a
+                className="resume-entry"
+                href="/Zixuan_Kenny_Ke_Resume.pdf"
+              >
+                <span>Résumé · PDF</span>
+                <span>View document →</span>
+              </a>
             </div>
           </div>
         </section>
