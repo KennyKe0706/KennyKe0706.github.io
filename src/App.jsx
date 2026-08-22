@@ -201,6 +201,10 @@ function App() {
             <h2>Résumé.</h2>
             <div className="resume-copy">
               <p>My current résumé is available as a PDF.</p>
+              <p className="resume-date">
+                Prepared and published online on{" "}
+                <time dateTime="2026-08-22">22 August 2026</time>.
+              </p>
               <a
                 className="resume-entry"
                 href="/Zixuan_Kenny_Ke_Resume.pdf"
