@@ -42,8 +42,7 @@ const profileLinks = [
   { label: "LeetCode", href: "https://leetcode.com/u/kennyke/" },
 ];
 
-// When the résumé is ready, add public/resume.pdf and set this to "/resume.pdf".
-const resumeHref = "";
+const resumeHref = "/Zixuan_Kenny_Ke_Resume.pdf";
 
 function ExternalArrow() {
   return <span aria-hidden="true">↗</span>;
