@@ -37,9 +37,13 @@ const profileLinks = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/zixuan-ke-50094a328/",
   },
+  { label: "X / Twitter", href: "https://x.com/kenny1723" },
   { label: "DMOJ", href: "https://dmoj.ca/user/Kenny" },
   { label: "LeetCode", href: "https://leetcode.com/u/kennyke/" },
 ];
+
+// When the résumé is ready, add public/resume.pdf and set this to "/resume.pdf".
+const resumeHref = "";
 
 function ExternalArrow() {
   return <span aria-hidden="true">↗</span>;
@@ -190,6 +194,37 @@ function App() {
                   <dd>Artificial intelligence · Machine learning</dd>
                 </div>
               </dl>
+            </div>
+          </div>
+        </section>
+
+        <section className="resume-section page-shell" id="resume">
+          <p className="section-label">Curriculum vitae</p>
+          <div className="resume-grid">
+            <h2>Résumé in preparation.</h2>
+            <div className="resume-copy">
+              <p>
+                I am currently preparing a concise record of my education,
+                experience, and projects. The completed PDF will be available
+                here.
+              </p>
+              {resumeHref ? (
+                <a
+                  className="resume-entry resume-entry-active"
+                  href={resumeHref}
+                >
+                  <span>Résumé · PDF</span>
+                  <span>View document →</span>
+                </a>
+              ) : (
+                <div
+                  className="resume-entry"
+                  aria-label="Résumé PDF, in progress"
+                >
+                  <span>Résumé · PDF</span>
+                  <span>In progress</span>
+                </div>
+              )}
             </div>
           </div>
         </section>
