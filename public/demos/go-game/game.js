@@ -201,6 +201,10 @@ svg.addEventListener("click", (event) => {
 });
 
 document.querySelector("#restart").addEventListener("click", () => {
+  if (!window.confirm("Restart the game? This will clear the board, scores, and undo history.")) {
+    return;
+  }
+
   board = createEmptyBoard();
   currentPlayer = 1;
   blackScore = 0;
