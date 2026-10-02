@@ -13,6 +13,7 @@ let currentPlayer = 1;
 let history = [];
 let blackScore = 0;
 let whiteScore = 0;
+let koPosition = null;
 
 function createEmptyBoard() {
   return Array(boardSize)
@@ -139,6 +140,7 @@ function saveState() {
     player: currentPlayer,
     blackScore,
     whiteScore,
+    koPosition: koPosition ? [...koPosition] : null,
   });
 }
 
@@ -147,6 +149,7 @@ function restoreState(state) {
   currentPlayer = state.player;
   blackScore = state.blackScore;
   whiteScore = state.whiteScore;
+  koPosition = state.koPosition;
 }
 
 function placeStone(column, row) {
@@ -160,14 +163,22 @@ function placeStone(column, row) {
     return;
   }
 
+  if (koPosition && koPosition[0] === column && koPosition[1] === row) {
+    turnStatus.textContent = "You can't do that";
+    return;
+  }
+
   saveState();
   board[column][row] = currentPlayer;
   const opponent = 3 - currentPlayer;
+
+  let capturedStones = [];
 
   for (const [adjacentColumn, adjacentRow] of getAdjacent(column, row)) {
     if (board[adjacentColumn][adjacentRow] !== opponent) continue;
     const opposingGroup = findGroup(adjacentColumn, adjacentRow, opponent);
     if (!hasLiberties(opposingGroup)) {
+      capturedStones.push(...opposingGroup);
       removeGroup(opposingGroup, currentPlayer);
     }
   }
@@ -179,6 +190,19 @@ function placeStone(column, row) {
     renderBoard();
     renderScores();
     return;
+  }
+
+  koPosition = null;
+  if (capturedStones.length === 1 && placedGroup.length === 1) {
+    let libertyCount = 0;
+    for (const [adjacentColumn, adjacentRow] of getAdjacent(column, row)) {
+      if (board[adjacentColumn][adjacentRow] === 0) {
+        libertyCount += 1;
+      }
+    }
+    if (libertyCount === 1) {
+      koPosition = capturedStones[0];
+    }
   }
 
   currentPlayer = opponent;
@@ -209,6 +233,7 @@ document.querySelector("#restart").addEventListener("click", () => {
   currentPlayer = 1;
   blackScore = 0;
   whiteScore = 0;
+  koPosition = null;
   history = [];
   renderBoard();
   renderStatus();
